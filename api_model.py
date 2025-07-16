@@ -16,6 +16,13 @@ class OpportunityInput(BaseModel):
     age: float
     days_to_close: float
 
+
+@app.get("/")
+def root():
+    return {"message": "API is running!"}
+
+
+
 @app.post("/predict")
 def predict_opportunity(data: OpportunityInput):
     # Create DataFrame from incoming data
