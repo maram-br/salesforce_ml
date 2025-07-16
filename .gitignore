@@ -3,3 +3,4 @@ opportunities.csv
 __pycache__/
 *.pyc
 .env
+.sfdx/
