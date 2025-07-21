@@ -31,11 +31,13 @@ def predict_opportunity(data: OpportunityInput):
         "E-Mobility Category": data.E_Mobility_Category,
         "Project Category": data.Project_Category
     }])
-    
+    print("INPUT:\n", input_df)
     # Predict using pipeline (which does encoding internally)
     prediction = pipeline.predict(input_df)[0]
     probability = pipeline.predict_proba(input_df)[0][1]  # probability for class 1 (IsWon)
     
+    print(f"Prediction: {prediction}, Probability: {probability}")
+
     return {
         "prediction": int(prediction),
         "probability": float(probability)
